@@ -1,0 +1,174 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedika Enterprises | Stock Broking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">📈 Vedika <span>Enterprises</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#markets">Markets</a>
+            <a href="#watchlist">Watchlist</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="login-btn" onclick="showLogin()">Login</button>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">YOUR MARKET. YOUR FUTURE.</p>
+            <h1>Invest Smart.<br><span>Grow Better.</span></h1>
+            <p>
+                Explore the stock market, track your favourite stocks
+                and take control of your financial journey with Vedika Enterprises.
+            </p>
+            <a href="#markets" class="primary-btn">Explore Markets →</a>
+        </div>
+
+        <div class="hero-card">
+            <p>Market Overview</p>
+            <h2>Indian Markets</h2>
+            <div class="market-row">
+                <span>NIFTY 50</span>
+                <strong id="niftyPrice">24,850.00</strong>
+            </div>
+            <div class="market-row">
+                <span>SENSEX</span>
+                <strong id="sensexPrice">81,200.00</strong>
+            </div>
+            <p class="disclaimer">Illustrative demo values, not live prices.</p>
+        </div>
+    </section>
+
+    <section class="stats" id="markets">
+        <div class="stat-box">
+            <p>NIFTY 50</p>
+            <h2>24,850.00</h2>
+            <span class="green">+0.85% (Demo)</span>
+        </div>
+        <div class="stat-box">
+            <p>SENSEX</p>
+            <h2>81,200.00</h2>
+            <span class="green">+0.62% (Demo)</span>
+        </div>
+        <div class="stat-box">
+            <p>BANK NIFTY</p>
+            <h2>54,300.00</h2>
+            <span class="red">-0.24% (Demo)</span>
+        </div>
+        <div class="stat-box">
+            <p>MARKET STATUS</p>
+            <h2>Demo Mode</h2>
+            <span>Not connected to an exchange</span>
+        </div>
+    </section>
+
+    <section class="market-section" id="watchlist">
+        <div class="section-heading">
+            <div>
+                <p class="tagline">MARKET TRACKER</p>
+                <h2>Your Stock Watchlist</h2>
+            </div>
+            <input type="text" id="searchStock"
+                   placeholder="Search company..."
+                   oninput="searchStocks()">
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Price (₹)</th>
+                        <th>Change</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="stockTable"></tbody>
+            </table>
+        </div>
+        <p class="disclaimer">
+            All stock names and prices below are sample data for demonstration.
+        </p>
+    </section>
+
+    <section class="chart-section">
+        <div class="section-heading">
+            <div>
+                <p class="tagline">PRICE VISUALIZATION</p>
+                <h2>Market Performance</h2>
+            </div>
+            <select id="chartPeriod" onchange="updateChart()">
+                <option value="1D">1 Day</option>
+                <option value="1W">1 Week</option>
+                <option value="1M">1 Month</option>
+            </select>
+        </div>
+
+        <div class="chart-box">
+            <canvas id="stockChart"></canvas>
+        </div>
+        <p class="disclaimer">
+            Illustrative chart only. It does not show actual historical prices.
+        </p>
+    </section>
+
+    <section class="features" id="about">
+        <p class="tagline">WHY VEDIKA ENTERPRISES?</p>
+        <h2>Trade With Confidence</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div>📊</div>
+                <h3>Market Insights</h3>
+                <p>Explore market trends and understand stock movements.</p>
+            </div>
+            <div class="feature-card">
+                <div>🔎</div>
+                <h3>Track Stocks</h3>
+                <p>Find companies and follow your favourite stocks.</p>
+            </div>
+            <div class="feature-card">
+                <div>🛡️</div>
+                <h3>Investor Education</h3>
+                <p>Learn about investing, risk and financial planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <p class="tagline">GET IN TOUCH</p>
+        <h2>Start Your Investment Journey</h2>
+        <p>Have a question? Send us a message.</p>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="primary-btn">Send Message</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+    <footer>
+        <div class="logo">📈 Vedika Enterprises</div>
+        <p>Learn. Invest. Grow.</p>
+        <p class="disclaimer">
+            Educational demo only. Not a real brokerage service.
+            No actual trades or investments are executed.
+        </p>
+        <p>© 2026 Vedika Enterprises. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
